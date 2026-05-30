@@ -19,13 +19,13 @@ export default function PageHeader({ eyebrow, title, text, image }) {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="rounded-full bg-darker/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.26em] text-primary">
+          <span className="rounded-full bg-darker/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-primary">
             {eyebrow}
           </span>
-          <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-primary sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-balance font-display text-[clamp(3rem,6vw,4.5rem)] font-bold leading-[1.04] text-primary">
             {title}
           </h1>
-          <p className="mt-5 text-lg leading-8 text-light/85">{text}</p>
+          <p className="mt-5 max-w-2xl text-[18px] leading-[1.8] text-light/85">{text}</p>
         </motion.div>
       </div>
     </section>

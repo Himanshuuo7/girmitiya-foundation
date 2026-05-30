@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: '#7f1d1d',
         cream: '#fff7e6',
         parchment: '#f8ead0',
+        light: '#fff7e6',
+        dark: '#241811',
+        darker: '#17110c',
         maroon: '#7f1d1d',
         saffron: '#d97706',
         gold: '#b88a2d',
@@ -15,7 +19,8 @@ export default {
       },
       fontFamily: {
         display: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        body: ['Inter', 'ui-sans-serif', 'system-ui']
       },
       boxShadow: {
         premium: '0 24px 70px rgba(95, 59, 36, 0.16)',

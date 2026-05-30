@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color: #241811;
+  color: #5f3b24;
   background: #fff7e6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,13 +13,28 @@
   scroll-behavior: smooth;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Inter', 'Source Sans 3', system-ui, sans-serif;
+  line-height: 1.75;
   background:
     radial-gradient(circle at top left, rgba(217, 119, 6, 0.16), transparent 30rem),
     linear-gradient(180deg, #fff7e6 0%, #fffaf1 42%, #f8ead0 100%);
+}
+
+body,
+button,
+a,
+input,
+textarea,
+select {
+  color: #5f3b24;
 }
 
 button,
@@ -36,6 +51,26 @@ img {
 
 ::selection {
   background: rgba(217, 119, 6, 0.25);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(217, 119, 6, 0.6);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .container-pad {
@@ -66,4 +101,14 @@ img {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }

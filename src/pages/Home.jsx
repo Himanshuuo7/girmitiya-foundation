@@ -1,11 +1,9 @@
 import HeroSection from '../components/home/HeroSection';
+import GlobalPresenceSection from '../components/home/GlobalPresenceSection';
 import {
   AboutPreview,
   BlogPreview,
-  FeaturedActivities,
   GalleryPartnersCta,
-  MissionVision,
-  ProgramHighlights,
   RootReconnect,
   Testimonials,
   WorkAreas
@@ -17,16 +15,14 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutPreview />
-      <MissionVision />
-      <WorkAreas />
-      <RootReconnect />
-      <FeaturedActivities />
-      <section className="py-20">
+      <section className="pb-20">
         <div className="container-pad">
           <StatsCounter />
         </div>
       </section>
-      <ProgramHighlights />
+      <WorkAreas />
+      <GlobalPresenceSection />
+      <RootReconnect />
       <Testimonials />
       <BlogPreview />
       <GalleryPartnersCta />

@@ -14,12 +14,12 @@ export default function RootSearch() {
           <Card>
             <Search className="text-primary" size={34} />
             <h2 className="mt-5 font-display text-3xl font-bold text-primary">Begin Your Search</h2>
-            <p className="mt-3 leading-7 text-light/75">Share whatever your family knows. Even a partial name, village, ship memory, or document can become a starting point.</p>
+            <p className="mt-3 leading-7 text-earth/80">Share whatever your family knows. Even a partial name, village, ship memory, or document can become a starting point.</p>
             <form className="mt-6 grid gap-4">
               {['Ancestor name or family surname', 'Known village / district', 'Country of settlement', 'Contact email'].map((label) => (
-                <input key={label} className="rounded-2xl border border-primary/20 bg-dark/65 px-4 py-3 outline-none focus:border-maroon" placeholder={label} />
+                <input key={label} className="rounded-2xl border border-primary/20 bg-white/90 px-4 py-3 text-ink placeholder:text-earth/50 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder={label} />
               ))}
-              <textarea rows="4" className="resize-none rounded-2xl border border-primary/20 bg-dark/65 px-4 py-3 outline-none focus:border-maroon" placeholder="Tell us the story or clues you have..." />
+              <textarea rows="4" className="resize-none rounded-2xl border border-primary/20 bg-white/90 px-4 py-3 text-ink placeholder:text-earth/50 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell us the story or clues you have..." />
               <Button type="button" icon={Send}>Submit Root Search Request</Button>
             </form>
           </Card>
@@ -33,7 +33,7 @@ export default function RootSearch() {
                 <Card key={title}>
                   <Icon className="text-primary" />
                   <h3 className="mt-4 font-display text-2xl font-bold text-primary">{title}</h3>
-                  <p className="mt-3 leading-7 text-light/74">{text}</p>
+                  <p className="mt-3 leading-7 text-earth/80">{text}</p>
                 </Card>
               ))}
             </div>
@@ -49,7 +49,7 @@ export default function RootSearch() {
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-primary font-bold text-light">{index + 1}</span>
                 <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-primary">{item.year}</p>
                 <h3 className="mt-2 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                <p className="mt-3 leading-7 text-light/74">{item.text}</p>
+                <p className="mt-3 leading-7 text-earth/80">{item.text}</p>
               </Card>
             ))}
           </div>

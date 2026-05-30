@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { ChevronDown, Heart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
@@ -16,11 +16,11 @@ function NavItem({ item, mobile = false, onNavigate }) {
         to={item.path}
         onClick={onNavigate}
         className={({ isActive }) =>
-          `relative px-2 py-2 text-sm font-semibold transition ${isActive ? 'text-primary' : 'text-light hover:text-maroon'}`
+          `group relative px-2 py-2 text-sm font-semibold transition ${isActive ? 'text-primary' : 'text-earth hover:text-primary'}`
         }
       >
         {item.label}
-        <span className="absolute bottom-0 left-2 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-8" />
+        <span className="absolute bottom-0 left-2 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-8 group-focus-visible:w-8" />
       </NavLink>
     );
   }
@@ -40,7 +40,7 @@ function NavItem({ item, mobile = false, onNavigate }) {
           }
         }}
         className={`flex items-center gap-1 px-2 py-2 text-sm font-semibold transition ${
-          active ? 'text-primary' : 'text-light hover:text-maroon'
+          active ? 'text-primary' : 'text-earth hover:text-primary'
         }`}
       >
         {item.label}
@@ -55,7 +55,7 @@ function NavItem({ item, mobile = false, onNavigate }) {
             className={
               mobile
                 ? 'ml-3 border-l border-primary/20 pl-3'
-                : 'absolute left-0 top-full z-30 min-w-56 rounded-2xl border border-primary/20 bg-dark/95 p-2 shadow-premium backdrop-blur'
+                : 'absolute left-0 top-full z-30 min-w-56 rounded-2xl border border-primary/15 bg-white/95 p-2 shadow-premium backdrop-blur'
             }
           >
             {item.children.map((child) => (
@@ -65,7 +65,7 @@ function NavItem({ item, mobile = false, onNavigate }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   `block rounded-xl px-4 py-3 text-sm font-semibold transition ${
-                    isActive ? 'bg-primary/10 text-primary' : 'text-light hover:bg-white/70 hover:text-maroon'
+                    isActive ? 'bg-primary/10 text-primary' : 'text-earth hover:bg-primary/5 hover:text-primary'
                   }`
                 }
               >
@@ -81,9 +81,13 @@ function NavItem({ item, mobile = false, onNavigate }) {
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[60] focus:rounded-full focus:bg-light focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary">
+        Skip to main content
+      </a>
       <nav className="glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-premium">
         <Link to="/" className="flex items-center gap-3" aria-label="Girmitiya Foundation home">
           <span className="grid h-11 w-11 place-items-center rounded-full bg-primary text-dark shadow-glow">
@@ -91,7 +95,7 @@ export default function Navbar() {
           </span>
           <span>
             <span className="block font-display text-lg font-bold leading-none text-primary">Girmitiya</span>
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-light/70">Foundation</span>
+            <span className="text-xs font-bold uppercase tracking-[0.22em] text-earth/60">Foundation</span>
           </span>
         </Link>
 
@@ -106,13 +110,17 @@ export default function Navbar() {
         </div>
 
         <button
-          className="grid h-11 w-11 place-items-center rounded-full bg-darker/75 text-primary lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary lg:hidden"
           onClick={() => setMobileOpen((value) => !value)}
           aria-label="Toggle navigation menu"
         >
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </nav>
+
+      <motion.div aria-hidden="true" className="mx-auto mt-2 h-1 max-w-[calc(100%-1.5rem)] overflow-hidden rounded-full bg-dark/10">
+        <motion.span className="block h-full origin-left rounded-full bg-gradient-to-r from-primary via-saffron to-gold" style={{ scaleX: scrollYProgress }} />
+      </motion.div>
 
       <AnimatePresence>
         {mobileOpen && (

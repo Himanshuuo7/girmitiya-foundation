@@ -8,6 +8,7 @@ import AnimatedContainer from '../common/AnimatedContainer';
 import Button from '../common/Button';
 import Card from '../common/Card';
 import SectionHeading from '../common/SectionHeading';
+import PartnerMarquee from './PartnerMarquee';
 import { activities, blogs, images, values, workAreas } from '../../data/siteData';
 
 export function AboutPreview() {
@@ -21,7 +22,7 @@ export function AboutPreview() {
           <SectionHeading align="left" eyebrow="About Foundation" title="A trust-centered movement for memory, dignity, and development." text="Girmitiya Foundation works with families, volunteers, educators, and community leaders to preserve ancestral identity while responding to present-day needs." />
           <div className="grid gap-3">
             {['Cultural heritage documentation', 'Grassroots social programs', 'Research, publications, and public learning'].map((item) => (
-              <p key={item} className="flex items-center gap-3 font-semibold text-light"><Check className="text-primary" /> {item}</p>
+              <p key={item} className="flex items-center gap-3 font-semibold text-earth"><Check className="text-primary" /> {item}</p>
             ))}
           </div>
           <Button to="/about" className="mt-7" icon={ArrowRight}>Know More</Button>
@@ -44,7 +45,7 @@ export function MissionVision() {
             <Card key={title}>
               <Sprout className="text-primary" size={34} />
               <h3 className="mt-5 font-display text-3xl font-bold text-primary">{title}</h3>
-              <p className="mt-4 leading-8 text-light/78">{text}</p>
+              <p className="mt-4 leading-8 text-earth/80">{text}</p>
             </Card>
           ))}
         </div>
@@ -64,11 +65,11 @@ export function WorkAreas() {
             return (
               <Link key={item.title} to={item.path}>
                 <Card className="h-full">
-                  <div className="grid h-13 w-13 place-items-center rounded-2xl bg-primary/12 p-3 text-primary">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/12 p-3 text-primary">
                     <Icon />
                   </div>
                   <h3 className="mt-5 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-light/74">{item.text}</p>
+                  <p className="mt-3 leading-7 text-earth/80">{item.text}</p>
                 </Card>
               </Link>
             );
@@ -85,7 +86,7 @@ export function RootReconnect() {
       <div className="container-pad overflow-hidden rounded-[2.2rem] bg-primary text-light shadow-premium">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="p-8 sm:p-12">
-            <span className="text-xs font-bold uppercase tracking-[0.28em] text-primary">Root Search</span>
+            <span className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">Root Search</span>
             <h2 className="mt-4 font-display text-4xl font-bold sm:text-5xl">Find names, places, stories, and the quiet threads between them.</h2>
             <p className="mt-5 leading-8 text-light/76">Root Search helps descendants begin a careful journey through oral histories, archive clues, family documents, and community memory.</p>
             <Button to="/root-search" variant="secondary" className="mt-8" icon={ArrowRight}>Start Reconnecting</Button>
@@ -126,7 +127,7 @@ export function ProgramHighlights() {
               <img src={image} alt={title} loading="lazy" className="h-64 w-full object-cover" />
               <div className="p-6">
                 <h3 className="font-display text-2xl font-bold text-primary">{title}</h3>
-                <p className="mt-3 leading-7 text-light/75">{text}</p>
+                <p className="mt-3 leading-7 text-earth/80">{text}</p>
                 <Button to={path} variant="ghost" className="mt-5">View Program</Button>
               </div>
             </Card>
@@ -178,10 +179,8 @@ export function GalleryPartnersCta() {
         <div className="container-pad">
           <div className="rounded-[2rem] border border-primary/20 bg-darker/70 p-8 shadow-premium">
             <p className="text-center text-sm font-bold uppercase tracking-[0.24em] text-light/55">Trusted by community partners</p>
-            <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {['Heritage Circle', 'Community Trust', 'Learning Forum', 'Roots Archive'].map((name) => (
-                <div key={name} className="rounded-2xl bg-dark px-5 py-5 text-center font-display text-xl font-bold text-primary">{name}</div>
-              ))}
+            <div className="mt-7">
+              <PartnerMarquee />
             </div>
           </div>
         </div>
@@ -190,7 +189,7 @@ export function GalleryPartnersCta() {
         <div className="container-pad">
           <div className="rounded-[2.2rem] bg-gradient-to-r from-maroon to-earth p-8 text-light shadow-premium sm:p-12 lg:flex lg:items-center lg:justify-between">
             <div>
-              <HandHeart className="text-primary" size={42} />
+              <HandHeart className="text-saffron" size={42} />
               <h2 className="mt-4 font-display text-4xl font-bold">Your support can turn memory into momentum.</h2>
               <p className="mt-3 max-w-2xl leading-8 text-light/76">Donate, volunteer, sponsor a program, or help a family begin the root search journey.</p>
             </div>

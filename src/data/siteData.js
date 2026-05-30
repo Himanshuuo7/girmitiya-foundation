@@ -94,10 +94,145 @@ export const workAreas = [
 ];
 
 export const stats = [
-  { label: 'Families Guided', value: 4200, suffix: '+' },
-  { label: 'Community Programs', value: 180, suffix: '+' },
-  { label: 'Volunteers', value: 650, suffix: '+' },
-  { label: 'Heritage Stories', value: 95, suffix: 'k' }
+  { label: 'Families Reconnected', value: 4200, suffix: '+' },
+  { label: 'Countries Reached', value: 10, suffix: '+' },
+  { label: 'Members', value: 1850, suffix: '+' },
+  { label: 'Projects', value: 180, suffix: '+' },
+  { label: 'Years of Service', value: 12, suffix: '+' }
+];
+
+export const partnerLogos = [
+  'Heritage Circle',
+  'Community Trust',
+  'Learning Forum',
+  'Roots Archive',
+  'Diaspora Network',
+  'Cultural Link',
+  'Village Voices',
+  'Memory Alliance'
+];
+
+export const globalPresence = [
+  {
+    country: 'India',
+    flag: '🇮🇳',
+    description: 'The foundation’s cultural and programmatic base for research, community support, and family tracing.',
+    presence: 'Research partners, volunteers, and community organizers across multiple states.',
+    activities: 'Root Search, education support, local training, public learning.',
+    programs: 'Archive work, field visits, and cultural documentation.',
+    learnMore: '/contact',
+    x: 760,
+    y: 286,
+    glow: 1
+  },
+  {
+    country: 'Fiji',
+    flag: '🇫🇯',
+    description: 'A vibrant Girmitiya community with strong cultural continuity and living remembrance.',
+    presence: 'Families, cultural groups, and heritage networks.',
+    activities: 'Story circles, celebrations, intergenerational learning.',
+    programs: 'Identity preservation and diaspora connection.',
+    learnMore: '/contact',
+    x: 1042,
+    y: 418,
+    glow: 0.95
+  },
+  {
+    country: 'Mauritius',
+    flag: '🇲🇺',
+    description: 'A key heritage hub where memory, language, and cultural identity remain deeply visible.',
+    presence: 'Community elders, researchers, and descendants.',
+    activities: 'Heritage talks, documentation, and cultural exchange.',
+    programs: 'Public history and family reconnection initiatives.',
+    learnMore: '/contact',
+    x: 875,
+    y: 390,
+    glow: 0.92
+  },
+  {
+    country: 'South Africa',
+    flag: '🇿🇦',
+    description: 'A strong diaspora presence shaped by family memory, civic participation, and cultural pride.',
+    presence: 'Community organizations and cultural associations.',
+    activities: 'Youth heritage engagement and public events.',
+    programs: 'Cultural continuity and community learning.',
+    learnMore: '/contact',
+    x: 850,
+    y: 498,
+    glow: 0.85
+  },
+  {
+    country: 'Suriname',
+    flag: '🇸🇷',
+    description: 'A place where Girmitiya identity is carried through language, ritual, and family story.',
+    presence: 'Families, educators, and heritage advocates.',
+    activities: 'Cultural documentation and youth programs.',
+    programs: 'Community memory and public education.',
+    learnMore: '/contact',
+    x: 282,
+    y: 368,
+    glow: 0.88
+  },
+  {
+    country: 'Trinidad & Tobago',
+    flag: '🇹🇹',
+    description: 'A dynamic cultural presence with a powerful tradition of public celebration and remembrance.',
+    presence: 'Cultural groups, families, and festival communities.',
+    activities: 'Performances, oral history, and youth mentorship.',
+    programs: 'Festival support and heritage learning.',
+    learnMore: '/contact',
+    x: 260,
+    y: 308,
+    glow: 0.9
+  },
+  {
+    country: 'Guyana',
+    flag: '🇬🇾',
+    description: 'An important diaspora community keeping history alive through family and cultural networks.',
+    presence: 'Families, scholars, and local community organizers.',
+    activities: 'Archival conversations and intergenerational programs.',
+    programs: 'Community learning and heritage storytelling.',
+    learnMore: '/contact',
+    x: 300,
+    y: 398,
+    glow: 0.88
+  },
+  {
+    country: 'Canada',
+    flag: '🇨🇦',
+    description: 'An expanding diaspora network connecting younger generations to heritage roots.',
+    presence: 'Students, families, and diaspora partners.',
+    activities: 'Digital community events and heritage learning.',
+    programs: 'Cross-border connection and cultural education.',
+    learnMore: '/contact',
+    x: 350,
+    y: 144,
+    glow: 0.8
+  },
+  {
+    country: 'United Kingdom',
+    flag: '🇬🇧',
+    description: 'A bridge for research, archives, and diaspora storytelling across generations.',
+    presence: 'Researchers, descendants, and cultural organizations.',
+    activities: 'Public history, seminars, and archive access.',
+    programs: 'Diaspora engagement and heritage exchange.',
+    learnMore: '/contact',
+    x: 562,
+    y: 164,
+    glow: 0.82
+  },
+  {
+    country: 'Europe',
+    flag: '🇪🇺',
+    description: 'A broader regional network of supporters, researchers, and descendants.',
+    presence: 'Community leaders and partner institutions.',
+    activities: 'Cultural programs, dialogues, and exhibitions.',
+    programs: 'Heritage visibility and international partnerships.',
+    learnMore: '/contact',
+    x: 636,
+    y: 184,
+    glow: 0.78
+  }
 ];
 
 export const activities = [

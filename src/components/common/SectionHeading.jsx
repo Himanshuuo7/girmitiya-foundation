@@ -5,14 +5,14 @@ export default function SectionHeading({ eyebrow, title, text, align = 'center' 
   return (
     <AnimatedContainer className={`mb-10 flex max-w-3xl flex-col ${alignment}`}>
       {eyebrow && (
-        <span className="mb-3 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-primary">
+        <span className="mb-3 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.26em] text-primary">
           {eyebrow}
         </span>
       )}
-      <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+      <h2 className="text-balance font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.08] text-primary">
         {title}
       </h2>
-      {text && <p className="mt-4 text-base leading-8 text-light/80 sm:text-lg">{text}</p>}
+      {text && <p className="mt-4 max-w-2xl text-[18px] leading-[1.8] text-earth/80">{text}</p>}
     </AnimatedContainer>
   );
 }

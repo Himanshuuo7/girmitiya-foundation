@@ -19,7 +19,7 @@ export default function About() {
                 <Card key={item.title}>
                   <Icon className="text-primary" />
                   <h3 className="mt-4 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                  <p className="mt-2 leading-7 text-light/74">{item.text}</p>
+                  <p className="mt-2 leading-7 text-earth/80">{item.text}</p>
                 </Card>
               );
             })}

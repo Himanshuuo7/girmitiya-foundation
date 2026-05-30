@@ -16,7 +16,7 @@ export default function ActivityCard({ item, to = '/activity' }) {
           <Icon />
         </div>
         <h3 className="font-display text-2xl font-bold text-primary">{item.title}</h3>
-        <p className="mt-3 leading-7 text-light/75">{item.text}</p>
+        <p className="mt-3 leading-7 text-earth/80">{item.text}</p>
         <Button to={to} variant="ghost" className="mt-5 px-4 py-2">Learn More</Button>
       </div>
     </Card>

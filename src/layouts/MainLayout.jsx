@@ -8,7 +8,7 @@ export default function MainLayout() {
     <>
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />
