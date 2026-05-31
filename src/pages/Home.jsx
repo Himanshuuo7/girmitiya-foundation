@@ -3,6 +3,7 @@ import GlobalPresenceSection from '../components/home/GlobalPresenceSection';
 import {
   AboutPreview,
   BlogPreview,
+  FlowingMenuShowcase,
   GalleryPartnersCta,
   RootReconnect,
   Testimonials,
@@ -24,6 +25,7 @@ export default function Home() {
       <GlobalPresenceSection />
       <RootReconnect />
       <Testimonials />
+      <FlowingMenuShowcase />
       <BlogPreview />
       <GalleryPartnersCta />
     </>

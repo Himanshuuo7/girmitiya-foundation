@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, HandHeart, Heart, MessageCircle } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Star, Users } from 'lucide-react';
 import Button from '../common/Button';
 import { heroImage } from '../../data/siteData';
 
@@ -19,35 +19,44 @@ export default function HeroSection() {
       <div className="container-pad relative grid min-h-[calc(100vh-7rem)] items-center gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75 }}>
           <span className="rounded-full border border-saffron/30 bg-dark/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-saffron backdrop-blur">
-            Heritage • Humanity • Hope
+            Rooted in heritage, united by purpose.
           </span>
-          <h1 className="mt-7 max-w-4xl text-balance font-display text-[clamp(3rem,6vw,4.5rem)] font-bold leading-[1.04] text-light">
-            Reconnecting Girmitiya roots with dignity, care, and community action.
+          <h1 className="mt-7 max-w-4xl text-balance font-display text-[clamp(3.2rem,6vw,4.8rem)] font-bold leading-[1.02] text-light">
+            Reconnect with your <span className="text-saffron">roots.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-[18px] leading-[1.8] text-light/88">
-            Girmitiya Foundation preserves cultural memory and strengthens families through root search, women empowerment, skill development, child welfare, and compassionate public service.
+          <p className="mt-5 max-w-2xl text-[18px] leading-[1.8] text-light/88">
+            Uniting Girmitiya descendants across generations through culture, genealogy, education, and community action.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button to="/membership" icon={Heart}>Join Membership</Button>
-            <Button to="/contact" variant="secondary" icon={HandHeart}>Donate Now</Button>
-            <Button to="/contact" variant="ghost" className="border border-dark/25 text-light hover:bg-white hover:text-maroon" icon={MessageCircle}>
-              Contact Us
-            </Button>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button to="/root-search" className="bg-maroon hover:bg-earth" icon={ArrowRight}>Explore Our Heritage</Button>
+            <Button to="/membership" variant="ghost" className="border border-light/40 text-light hover:bg-light hover:text-maroon">Become a Member</Button>
           </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.7 }} className="lg:justify-self-end">
-          <div className="glass max-w-md rounded-[2rem] p-6 text-earth shadow-premium">
-            <p className="font-display text-3xl font-bold text-primary">A living bridge to ancestry.</p>
-            <p className="mt-3 leading-7 text-earth/80">
-              From old family names to new learning opportunities, the foundation helps communities hold memory and progress together.
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-3 text-center">
-              {['Root Search', 'Women Led', 'Youth Skills', 'Child Care'].map((item) => (
-                <div key={item} className="rounded-2xl bg-primary/10 p-4 font-semibold text-primary">{item}</div>
-              ))}
+          <div className="glass max-w-md rounded-[2rem] border border-white/20 bg-dark/60 p-6 text-light shadow-premium">
+            <p className="font-display text-2xl font-bold text-light">A living bridge to ancestry.</p>
+            <div className="mt-5 grid gap-4 text-sm">
+              {[
+                { label: 'Members Worldwide', value: '4200+', icon: Users },
+                { label: 'Families Connected', value: '1850+', icon: MapPin },
+                { label: 'Projects Completed', value: '180+', icon: Star },
+                { label: 'Years of Impact', value: '12', icon: Calendar }
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                    <div className="flex items-center gap-3">
+                      <span className="grid h-9 w-9 place-items-center rounded-full bg-saffron/20 text-saffron">
+                        <Icon size={18} />
+                      </span>
+                      <span className="text-light/80">{item.label}</span>
+                    </div>
+                    <span className="font-display text-lg font-bold text-light">{item.value}</span>
+                  </div>
+                );
+              })}
             </div>
-            <Button to="/root-search" variant="ghost" className="mt-6 w-full" icon={ArrowRight}>Explore Root Search</Button>
           </div>
         </motion.div>
       </div>

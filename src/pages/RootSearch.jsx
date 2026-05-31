@@ -12,9 +12,9 @@ export default function RootSearch() {
       <section className="py-20">
         <div className="container-pad grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Card>
-            <Search className="text-primary" size={34} />
-            <h2 className="mt-5 font-display text-3xl font-bold text-primary">Begin Your Search</h2>
-            <p className="mt-3 leading-7 text-earth/80">Share whatever your family knows. Even a partial name, village, ship memory, or document can become a starting point.</p>
+            <Search className="text-saffron" size={34} />
+            <h2 className="mt-5 font-display text-3xl font-bold text-light">Begin Your Search</h2>
+            <p className="mt-3 leading-7 text-light/80">Share whatever your family knows. Even a partial name, village, ship memory, or document can become a starting point.</p>
             <form className="mt-6 grid gap-4">
               {['Ancestor name or family surname', 'Known village / district', 'Country of settlement', 'Contact email'].map((label) => (
                 <input key={label} className="rounded-2xl border border-primary/20 bg-white/90 px-4 py-3 text-ink placeholder:text-earth/50 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder={label} />
@@ -31,9 +31,9 @@ export default function RootSearch() {
                 ['Place Memory', 'Village names, temples, districts, songs, rituals, foods, and spoken fragments.', Map]
               ].map(([title, text, Icon]) => (
                 <Card key={title}>
-                  <Icon className="text-primary" />
-                  <h3 className="mt-4 font-display text-2xl font-bold text-primary">{title}</h3>
-                  <p className="mt-3 leading-7 text-earth/80">{text}</p>
+                  <Icon className="text-saffron" />
+                  <h3 className="mt-4 font-display text-2xl font-bold text-light">{title}</h3>
+                  <p className="mt-3 leading-7 text-light/80">{text}</p>
                 </Card>
               ))}
             </div>
@@ -46,10 +46,10 @@ export default function RootSearch() {
           <div className="relative grid gap-6 lg:grid-cols-4">
             {timeline.map((item, index) => (
               <Card key={item.title} className="relative">
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-primary font-bold text-light">{index + 1}</span>
-                <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-primary">{item.year}</p>
-                <h3 className="mt-2 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                <p className="mt-3 leading-7 text-earth/80">{item.text}</p>
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-saffron text-dark font-bold">{index + 1}</span>
+                <p className="mt-5 text-sm font-bold uppercase tracking-[0.22em] text-saffron">{item.year}</p>
+                <h3 className="mt-2 font-display text-2xl font-bold text-light">{item.title}</h3>
+                <p className="mt-3 leading-7 text-light/80">{item.text}</p>
               </Card>
             ))}
           </div>

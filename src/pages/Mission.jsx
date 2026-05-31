@@ -15,9 +15,9 @@ export default function Mission() {
               const Icon = item.icon;
               return (
                 <Card key={item.title}>
-                  <Icon className="text-primary" />
-                  <h3 className="mt-4 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-light/74">{item.text}</p>
+                  <Icon className="text-saffron" />
+                  <h3 className="mt-4 font-display text-2xl font-bold text-light">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-light/80">{item.text}</p>
                 </Card>
               );
             })}

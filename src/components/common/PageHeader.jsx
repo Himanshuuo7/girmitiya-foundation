@@ -25,7 +25,7 @@ export default function PageHeader({ eyebrow, title, text, image }) {
           <h1 className="mt-6 text-balance font-display text-[clamp(3rem,6vw,4.5rem)] font-bold leading-[1.04] text-primary">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-[18px] leading-[1.8] text-light/85">{text}</p>
+          <p className="mt-5 max-w-2xl text-[18px] leading-[1.8] text-earth/80">{text}</p>
         </motion.div>
       </div>
     </section>

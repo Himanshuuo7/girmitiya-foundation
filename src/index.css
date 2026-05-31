@@ -5,8 +5,6 @@
 @tailwind utilities;
 
 :root {
-  color: #5f3b24;
-  background: #fff7e6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,20 +19,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Inter', 'Source Sans 3', system-ui, sans-serif;
+  font-family: 'Source Sans 3', 'Inter', system-ui, sans-serif;
   line-height: 1.75;
-  background:
-    radial-gradient(circle at top left, rgba(217, 119, 6, 0.16), transparent 30rem),
-    linear-gradient(180deg, #fff7e6 0%, #fffaf1 42%, #f8ead0 100%);
-}
-
-body,
-button,
-a,
-input,
-textarea,
-select {
-  color: #5f3b24;
 }
 
 button,

@@ -3,7 +3,7 @@ import Card from './common/Card';
 
 export default function BlogCard({ post }) {
   return (
-    <Card className="overflow-hidden p-0">
+    <Card className="overflow-hidden border border-primary/10 bg-white/90 p-0 text-earth shadow-[0_18px_40px_rgba(95,59,36,0.12)]">
       <div className="overflow-hidden">
         <img src={post.image} alt={post.title} loading="lazy" className="h-56 w-full object-cover transition duration-700 hover:scale-110" />
       </div>
@@ -12,8 +12,8 @@ export default function BlogCard({ post }) {
           {post.category}
         </span>
         <h3 className="mt-4 font-display text-2xl font-bold text-primary">{post.title}</h3>
-        <p className="mt-3 line-clamp-3 leading-7 text-earth/80">{post.excerpt}</p>
-        <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-earth/60">
+        <p className="mt-3 line-clamp-3 text-sm leading-6 text-earth/80">{post.excerpt}</p>
+        <p className="mt-5 flex items-center gap-2 text-xs font-semibold text-earth/60">
           <CalendarDays size={16} /> {post.date}
         </p>
       </div>

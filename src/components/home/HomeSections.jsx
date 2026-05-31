@@ -7,6 +7,7 @@ import TestimonialSlider from '../TestimonialSlider';
 import AnimatedContainer from '../common/AnimatedContainer';
 import Button from '../common/Button';
 import Card from '../common/Card';
+import FlowingMenu from '../common/FlowingMenu';
 import SectionHeading from '../common/SectionHeading';
 import PartnerMarquee from './PartnerMarquee';
 import { activities, blogs, images, values, workAreas } from '../../data/siteData';
@@ -19,13 +20,31 @@ export function AboutPreview() {
           <img src={images.about} alt="Community members" loading="lazy" className="aspect-[4/3] rounded-[2rem] object-cover shadow-premium" />
         </AnimatedContainer>
         <AnimatedContainer delay={0.1}>
-          <SectionHeading align="left" eyebrow="About Foundation" title="A trust-centered movement for memory, dignity, and development." text="Girmitiya Foundation works with families, volunteers, educators, and community leaders to preserve ancestral identity while responding to present-day needs." />
-          <div className="grid gap-3">
-            {['Cultural heritage documentation', 'Grassroots social programs', 'Research, publications, and public learning'].map((item) => (
-              <p key={item} className="flex items-center gap-3 font-semibold text-earth"><Check className="text-primary" /> {item}</p>
-            ))}
+          <SectionHeading
+            align="left"
+            eyebrow="About Girmitiya Foundation"
+            title="A trust-centered movement for memory, dignity, and development."
+            text="We bring together descendants, educators, volunteers, and researchers to preserve shared heritage, empower communities, and build a future rooted in identity and unity."
+          />
+          <div className="mt-6 grid gap-4">
+            <div className="grid gap-3 rounded-2xl border border-primary/10 bg-white/70 p-4 shadow-[0_16px_40px_rgba(95,59,36,0.08)]">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">Our journey</p>
+              <div className="grid gap-3 sm:grid-cols-4">
+                {[
+                  ['2013', 'Foundation started'],
+                  ['2017', 'Global chapters'],
+                  ['2020', 'Digital archive'],
+                  ['2025', 'Worldwide community']
+                ].map(([year, label]) => (
+                  <div key={year} className="rounded-2xl border border-primary/10 bg-light/80 p-3 text-center">
+                    <p className="font-display text-lg font-bold text-primary">{year}</p>
+                    <p className="mt-1 text-xs font-semibold text-earth/70">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <Button to="/about" className="mt-7" icon={ArrowRight}>Know More</Button>
+          <Button to="/about" className="mt-7" icon={ArrowRight}>Learn More About Us</Button>
         </AnimatedContainer>
       </div>
     </section>
@@ -58,18 +77,21 @@ export function WorkAreas() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="Work Areas" title="Programs shaped around real community needs." text="Each area connects practical development with the emotional strength of cultural belonging." />
+        <SectionHeading eyebrow="What We Do" title="Programs shaped around real community needs." text="Each initiative connects practical development with the emotional strength of cultural belonging." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {workAreas.map((item) => {
             const Icon = item.icon;
             return (
               <Link key={item.title} to={item.path}>
-                <Card className="h-full">
-                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/12 p-3 text-primary">
+                <Card className="h-full bg-white/90 p-6 text-earth shadow-[0_18px_40px_rgba(95,59,36,0.12)]">
+                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
                     <Icon />
                   </div>
-                  <h3 className="mt-5 font-display text-2xl font-bold text-primary">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-earth/80">{item.text}</p>
+                  <h3 className="mt-4 font-display text-xl font-bold text-primary">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-earth/80">{item.text}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Explore More <ArrowRight size={14} />
+                  </span>
                 </Card>
               </Link>
             );
@@ -86,10 +108,10 @@ export function RootReconnect() {
       <div className="container-pad overflow-hidden rounded-[2.2rem] bg-primary text-light shadow-premium">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="p-8 sm:p-12">
-            <span className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">Root Search</span>
+            <span className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">Our Stories</span>
             <h2 className="mt-4 font-display text-4xl font-bold sm:text-5xl">Find names, places, stories, and the quiet threads between them.</h2>
-            <p className="mt-5 leading-8 text-light/76">Root Search helps descendants begin a careful journey through oral histories, archive clues, family documents, and community memory.</p>
-            <Button to="/root-search" variant="secondary" className="mt-8" icon={ArrowRight}>Start Reconnecting</Button>
+            <p className="mt-5 leading-8 text-light/80">Every family has a journey. Discover the connections that bind us across generations.</p>
+            <Button to="/root-search" variant="secondary" className="mt-8" icon={ArrowRight}>Start Exploring</Button>
           </div>
           <img src={images.roots} alt="Old records and heritage" loading="lazy" className="h-full min-h-80 w-full object-cover" />
         </div>
@@ -142,7 +164,7 @@ export function Testimonials() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="Voices" title="Community stories carry the heart of the foundation." />
+        <SectionHeading eyebrow="Community Voices" title="Community stories carry the heart of the foundation." />
         <TestimonialSlider />
       </div>
     </section>
@@ -153,9 +175,42 @@ export function BlogPreview() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="Journal" title="Ideas, field notes, and heritage reflections." />
+        <SectionHeading eyebrow="Ideas & Reflections" title="Ideas, field notes, and heritage reflections." />
         <div className="grid gap-6 lg:grid-cols-3">
           {blogs.slice(0, 3).map((post) => <BlogCard key={post.title} post={post} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FlowingMenuShowcase() {
+  const items = [
+    { link: '/publication', text: 'Archives', image: images.publication },
+    { link: '/root-search', text: 'Root Search', image: images.roots },
+    { link: '/woman-empowerment', text: 'Women Empowerment', image: images.women },
+    { link: '/skill-development', text: 'Skill Development', image: images.skill },
+    { link: '/child-welfare', text: 'Child Welfare', image: images.child }
+  ];
+
+  return (
+    <section className="py-20">
+      <div className="container-pad">
+        <SectionHeading
+          eyebrow="Heritage Pathways"
+          title="Explore the living map of programs, archives, and community memory."
+          text="Hover each pathway to see how Girmitiya heritage travels through stories, education, and cultural preservation."
+        />
+        <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-primary/20 shadow-premium">
+          <FlowingMenu
+            items={items}
+            speed={18}
+            textColor="#fff7e6"
+            bgColor="#1a130f"
+            marqueeBgColor="#f8ead0"
+            marqueeTextColor="#5f3b24"
+            borderColor="rgba(255,247,230,0.2)"
+          />
         </div>
       </div>
     </section>
@@ -167,7 +222,7 @@ export function GalleryPartnersCta() {
     <>
       <section className="py-20">
         <div className="container-pad">
-          <SectionHeading eyebrow="Media Gallery" title="Moments from the field, the archive, and the community." />
+          <SectionHeading eyebrow="Moments That Matter" title="Moments from the field, the archive, and the community." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[images.about, images.women, images.skill, images.child].map((image, index) => (
               <img key={image} src={image} alt={`Foundation gallery ${index + 1}`} loading="lazy" className="h-72 w-full rounded-[1.5rem] object-cover shadow-premium transition duration-700 hover:scale-[1.03]" />
@@ -177,8 +232,8 @@ export function GalleryPartnersCta() {
       </section>
       <section className="pb-20">
         <div className="container-pad">
-          <div className="rounded-[2rem] border border-primary/20 bg-darker/70 p-8 shadow-premium">
-            <p className="text-center text-sm font-bold uppercase tracking-[0.24em] text-light/55">Trusted by community partners</p>
+          <div className="rounded-[2rem] border border-primary/15 bg-white/85 p-8 shadow-[0_20px_45px_rgba(95,59,36,0.12)]">
+            <p className="text-center text-sm font-bold uppercase tracking-[0.24em] text-primary">Our Partners</p>
             <div className="mt-7">
               <PartnerMarquee />
             </div>

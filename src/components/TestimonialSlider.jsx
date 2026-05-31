@@ -18,12 +18,13 @@ export default function TestimonialSlider() {
     >
       {testimonials.map((item) => (
         <SwiperSlide key={item.name}>
-          <article className="h-full rounded-[1.6rem] border border-primary/20 bg-darker/80 p-7 shadow-premium transition hover:border-primary/30">
-            <Quote className="text-primary" />
-            <p className="mt-5 leading-8 text-light/80">“{item.quote}”</p>
+          <article className="h-full rounded-[1.4rem] border border-primary/20 bg-darker/90 p-6 shadow-premium transition hover:border-primary/30">
+            <Quote className="text-saffron" />
+            <p className="mt-4 text-sm leading-6 text-light/82">“{item.quote}”</p>
             <div className="mt-6">
-              <p className="font-bold text-primary">{item.name}</p>
-              <p className="text-sm text-light/60">{item.role}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-light/55">Community Voice</p>
+              <p className="mt-2 font-semibold text-light">{item.name}</p>
+              <p className="text-xs text-light/60">{item.role}</p>
             </div>
           </article>
         </SwiperSlide>
